@@ -109,6 +109,6 @@
 	</organization>
 	<scm>
 		<developerConnection>scm:git:git@github.com:b-vesco/vesco-helixsorter.git</developerConnection>
-		<tag>release</tag>
+		<url>https://github.com/b-vesco/vesco-helixsorter</url>
 	</scm>
 </project>
