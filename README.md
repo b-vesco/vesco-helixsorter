@@ -25,3 +25,6 @@ It will create a directory named `sorted` in the current directory. The program 
 ## Eclipse
 The STS build of Eclipse is preferred if you aren't familiar with the toolchain, otherwise be sure to install enough plugins to do maven, git, or whatever else you want to do from IDE. You can configure a run profile by pointing at `App.java` and setting a single program argument: the path where *.hlx files are located that you want to use for testing. Example:
 * `/Users/myself/Documents/my\ helix\ patches/`
+
+## Links
+[Home Page](http://www.benvesco.com/blog/vescos-helix-patch-sorter/)
