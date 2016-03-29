@@ -1,6 +1,8 @@
 # Vesco's Helix Sorter
 A utility for sorting patch files for the Line 6 Helix. It takes all patch files under a directory (and subdirectories) and sorts them into folders named according to which amp models are used in the patch.
 
+![Vesco's Helix Patch Sorter Overview](http://i0.wp.com/www.benvesco.com/blog/wp-content/uploads/2016/03/HelixSorter.jpg)
+
 # Usage
 ## Basic
 Drop the .jar file in your base patch directory and run it.
