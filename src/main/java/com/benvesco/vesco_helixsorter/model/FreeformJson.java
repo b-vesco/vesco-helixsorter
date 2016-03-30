@@ -14,7 +14,7 @@ import com.google.common.collect.Maps;
  * 
  * @author bvesco
  */
-public abstract class FreeformJson {
+public class FreeformJson {
     @JsonIgnore
     private Map<String, JsonNode> extraFields = Maps.newHashMap();
 

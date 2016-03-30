@@ -65,6 +65,7 @@ public class App {
 	}
 
 	for (File hlxFile : dir.listFiles((FilenameFilter) hlxFilter)) {
+	    logger.info("processing {}", hlxFile.getName());
 	    HlxPatchFile patch = Json.toPojo(hlxFile, HlxPatchFile.class);
 	    Set<String> models = getUsedModelsFrom(patch);
 	    for (String model : models) {
