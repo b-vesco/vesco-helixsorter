@@ -6,6 +6,7 @@ A utility for sorting patch files for the Line 6 Helix. It takes all patch files
 # Usage
 ## Basic
 Drop the .jar file in your base patch directory and run it.
+```java -jar name-of.jar```
 
 ## Advanced
 You can run this CLI and pass in the directory name. If you know what this means you won't need help. If you don't know what this means then don't do it this way.

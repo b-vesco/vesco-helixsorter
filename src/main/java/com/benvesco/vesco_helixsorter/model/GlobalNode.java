@@ -2,7 +2,7 @@ package com.benvesco.vesco_helixsorter.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class GlobalNode {
+public class GlobalNode extends FreeformJson {
     /** Probably which path has the block that loads selected on patch recall */
     // Examples: 0, 1
     @JsonProperty("@cursor_dsp")
