@@ -28,4 +28,5 @@ The STS build of Eclipse is preferred if you aren't familiar with the toolchain,
 * `/Users/myself/Documents/my\ helix\ patches/`
 
 ## Links
-[Home Page](http://www.benvesco.com/blog/vescos-helix-patch-sorter/)
+- [Home Page](http://www.benvesco.com/blog/vescos-helix-patch-sorter/)
+- [Releases](https://github.com/b-vesco/vesco-helixsorter/releases)
