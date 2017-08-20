@@ -31,6 +31,9 @@ public class App {
     /** All amp models start with this prefix */
     private static final String AMP_PREFIX = "HD2_Amp";
 
+    /** All amp models start with this prefix */
+    private static final String PREAMP_PREFIX = "HD2_Preamp";
+
     private static final Logger logger = LoggerFactory.getLogger(App.class);
     private static final WildcardFileFilter hlxFilter = new WildcardFileFilter("*.hlx", IOCase.INSENSITIVE);
 
@@ -68,12 +71,16 @@ public class App {
 	    logger.info("processing {}", hlxFile.getName());
 	    HlxPatchFile patch = Json.toPojo(hlxFile, HlxPatchFile.class);
 	    Set<String> models = getUsedModelsFrom(patch);
+        if (models.isEmpty()){
+            logger.warn("\txxxxxx no amps found!!!");
+        }
 	    for (String model : models) {
 		File modelDir = getSubDir(copyDir, model);
 		String newFilename = (models.size() == 1) ? hlxFile.getName() : "_" + hlxFile.getName();
 		File destFile = new File(modelDir, newFilename);
 		try {
 		    FileUtils.copyFile(hlxFile, destFile);
+            logger.info("\t-----> copied to {}", modelDir);
 		} catch (IOException e) {
 		    logger.error("unable to copy file " + hlxFile.getName(), e);
 		}
@@ -84,6 +91,9 @@ public class App {
     private static File getSubDir(File parent, String child) {
 	if (child.startsWith(AMP_PREFIX)) {
 	    child = child.substring(AMP_PREFIX.length());
+	}
+    if (child.startsWith(PREAMP_PREFIX)) {
+	    child = child.substring(PREAMP_PREFIX.length());
 	}
 	File subDir = new File(parent, child);
 	subDir.mkdir();
@@ -128,6 +138,9 @@ public class App {
 	    }
 	    String modelValue = modelNode.asText("failsauce");
 	    if (modelValue.startsWith(AMP_PREFIX)) {
+		models.add(modelValue);
+	    }
+        if (modelValue.startsWith(PREAMP_PREFIX)) {
 		models.add(modelValue);
 	    }
 	}
