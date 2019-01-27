@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * array or if a {@code null} is allowed in the saved json. When a switch is
  * pressed it will toggle the state of every block within. This is even true for
  * the toe-switch.
- * 
+ *
  * @author bvesco
  */
 public class FootswitchesNode {

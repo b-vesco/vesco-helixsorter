@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * A "join" in helix is when a single DSP needs to merge two signals back
  * together as a result of a previous split. A DSP will only have one join.
- * 
+ *
  * @author bvesco
  */
 public class JoinNode extends BaseBlockNode {

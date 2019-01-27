@@ -1,15 +1,14 @@
 package com.benvesco.vesco_helixsorter.util;
 
-import java.io.File;
-
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.File;
 
 /**
  * A bunch of JSON utils to wrap Jackson functionality.
- * 
+ *
  * @author bvesco
  */
 public class Json {
@@ -18,26 +17,26 @@ public class Json {
     public static final ObjectMapper mapper = new ObjectMapper();
 
     public static <T> T toPojo(String fromString, Class<T> clazz) {
-	T parsed = null;
+        T parsed = null;
 
-	try {
-	    parsed = mapper.readValue(fromString, clazz);
-	} catch (Exception e) {
-	    logger.error("exception while parsing JSON: {}", e.getMessage());
-	}
+        try {
+            parsed = mapper.readValue(fromString, clazz);
+        } catch (Exception e) {
+            logger.error("exception while parsing JSON: {}", e.getMessage());
+        }
 
-	return parsed;
+        return parsed;
     }
 
     public static <T> T toPojo(File fromFile, Class<T> clazz) {
-	T parsed = null;
+        T parsed = null;
 
-	try {
-	    parsed = mapper.readValue(fromFile, clazz);
-	} catch (Exception e) {
-	    logger.error("exception while parsing JSON: {}", e.getMessage());
-	}
+        try {
+            parsed = mapper.readValue(fromFile, clazz);
+        } catch (Exception e) {
+            logger.error("exception while parsing JSON: {}", e.getMessage());
+        }
 
-	return parsed;
+        return parsed;
     }
 }

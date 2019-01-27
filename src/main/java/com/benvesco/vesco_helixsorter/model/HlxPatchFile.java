@@ -2,7 +2,7 @@ package com.benvesco.vesco_helixsorter.model;
 
 /**
  * Representation of the .hlx file format.
- * 
+ *
  * @author bvesco
  */
 public class HlxPatchFile {
