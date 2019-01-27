@@ -2,7 +2,7 @@ package com.benvesco.vesco_helixsorter.model;
 
 /**
  * Represents the "data" node in a patch file.
- * 
+ *
  * @author bvesco
  */
 public class DataNode {

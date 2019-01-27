@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 /**
  * Represents a single footswtich assignment. A physical footswitch could have
  * many of these if assigned to multiple functions.
- * 
+ *
  * @author bvesco
  */
 public class Footswitch extends FreeformJson {

@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * toggles are assigned in the Helix's "controllers" menu they will not be in
  * this data structure. Instead those types of controllers are represented in
  * the "footswitches" structure.
- * 
+ *
  * @author bvesco
  */
 public class ControllersNode {

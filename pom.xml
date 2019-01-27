@@ -2,6 +2,11 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
+		<!-- maven plugins -->
+		<maven-release-plugin.version>2.5.3</maven-release-plugin.version>
+		<maven-shade-plugin.version>3.2.1</maven-shade-plugin.version>
+
+		<!-- project dependencies -->
 		<commons-io.version>2.4</commons-io.version>
 		<guava.version>19.0</guava.version>
 		<jackson.version>2.7.3</jackson.version>
@@ -22,7 +27,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
-				<version>2.4.3</version>
+				<version>${maven-shade-plugin.version}</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -42,7 +47,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
-				<version>2.5.3</version>
+				<version>${maven-release-plugin.version}</version>
 			</plugin>
 		</plugins>
 	</build>
@@ -91,14 +96,6 @@
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>${commons-io.version}</version>
-		</dependency>
-
-		<!-- testing, haven't done any yet, shouldn't use crappy junit 3 -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
 		</dependency>
 	</dependencies>
 	<organization>

@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 
 /**
  * Data to describe a single expression pedal assignment
- * 
+ *
  * @author bvesco
  */
 public class Controller {

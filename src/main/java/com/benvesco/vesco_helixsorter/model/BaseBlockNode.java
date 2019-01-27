@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Common fields.
- * 
+ *
  * @author bvesco
  */
 public class BaseBlockNode extends FreeformJson {
