@@ -58,13 +58,23 @@ public class App {
      * @param copyDir The directory that will hold copies of the patch files.
      */
     private static void traverse(File dir, File copyDir) {
-        for (File subdir : dir.listFiles((FilenameFilter) DirectoryFileFilter.INSTANCE)) {
+        File[] subdirs = dir.listFiles((FilenameFilter) DirectoryFileFilter.INSTANCE);
+        if (subdirs == null) {
+            logger.info("Moving on. No subdirectories found in {}", dir.getAbsolutePath());
+            subdirs = new File[]{};
+        }
+        for (File subdir : subdirs) {
             if (SORTED_SUBDIR.equals(subdir.getName()))
                 continue;
             traverse(subdir, copyDir);
         }
 
-        for (File hlxFile : dir.listFiles((FilenameFilter) hlxFilter)) {
+        File[] hlxFiles = dir.listFiles((FilenameFilter) hlxFilter);
+        if (hlxFiles == null) {
+            logger.info("Moving on. No *.hlx files found in {}", dir.getAbsolutePath());
+            hlxFiles = new File[]{};
+        }
+        for (File hlxFile : hlxFiles) {
             logger.info("processing {}", hlxFile.getName());
             HlxPatchFile patch = Json.toPojo(hlxFile, HlxPatchFile.class);
             Set<String> models = getUsedModelsFrom(patch);
@@ -93,7 +103,11 @@ public class App {
             child = child.substring(PREAMP_PREFIX.length());
         }
         File subDir = new File(parent, child);
-        subDir.mkdir();
+        if (!subDir.exists()) {
+            if (!subDir.mkdir()) {
+                throw new RuntimeException("Failed to create a subdirectory in " + subDir.getAbsolutePath());
+            }
+        }
         return subDir;
     }
 
